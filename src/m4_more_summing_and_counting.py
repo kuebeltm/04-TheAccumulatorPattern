@@ -12,8 +12,8 @@ in its "in graphics" form:
    IN GRAPHICS:   x = x + pixels
 
 Authors: David Mutchler, Dave Fisher, Valerie Galluzzi, Amanda Stouder,
-         their colleagues and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         their colleagues and Todd Kuebelbeck.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 import math
 import builtins  # Never necessary, but here for pedagogical reasons
@@ -90,7 +90,7 @@ def run_test_sum_from():
     print('       actual (from my code):  ', answer_from_my_code)
 
 # ----------------------------------------------------------------------
-# TODO: 2.
+# DONE: 2.
 #   When you have READ the above  run_test_sum_from  function,
 #   asking questions as needed, and you feel that you (mostly, at least)
 #   understand it, and you feel that you understand from the example:
@@ -125,6 +125,11 @@ def sum_from(m, n):
     #   of the RANGE expression, if you happen to know them.
     # ------------------------------------------------------------------
 
+    accum = 0
+
+    for k in range(m,n+1,1):
+        accum = accum + k
+    return accum
 
 def run_test_factorial():
     """ Tests the   factorial   function. """
@@ -162,6 +167,10 @@ def run_test_factorial():
     #   ** uses  math.factorial  as an ORACLE for testing. **
     # ------------------------------------------------------------------
 
+    answer_from_oracle = math.factorial(6)
+    answer_from_my_code = factorial(6)
+    print('Test 2 expected (from oracle):', answer_from_oracle)
+    print('       actual (from my code): ', answer_from_my_code)
 
 def factorial(n):
     """
@@ -179,7 +188,11 @@ def factorial(n):
     # IMPORTANT:  Your solution MUST
     #   use an explicit    for ... in range(...):     statement.
     # ------------------------------------------------------------------
+    accum = 0
 
+    for k in range(n,0,-1):
+        accum = accum + k
+    return accum
 
 def run_test_count_cosines_from():
     """ Tests the   count_cosines_from   function. """
